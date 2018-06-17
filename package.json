@@ -12,7 +12,8 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "devtool": "node ./node_modules/.bin/react-devtools"
   },
   "jest": {
     "preset": "react-native"
@@ -21,6 +22,7 @@
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-vector-icons": "^4.6.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
   }
