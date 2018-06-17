@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   placeName: {
     textAlign: 'center',
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
   },
   placeActions: {
