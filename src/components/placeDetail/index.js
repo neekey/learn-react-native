@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, Text, Modal, Button, StyleSheet } from 'react-native';
+import { View, Image, Text, Modal, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function PlaceDetail({ place, onCloseModal, onDeletePlace }) {
   const visible = !!place;
@@ -14,11 +15,13 @@ export default function PlaceDetail({ place, onCloseModal, onDeletePlace }) {
     )
   }
   return (
-    <Modal visible={visible} onRequestClose={onCloseModal}>
+    <Modal animationType="slide" visible={visible} onRequestClose={onCloseModal}>
       {view}
       <View style={styles.placeActions}>
         <Button onPress={onCloseModal} title="Close" />
-        <Button onPress={onDeletePlace} title="Delete" color="red" />
+        <TouchableOpacity onPress={onDeletePlace}>
+          <Icon name="ios-trash" size={30} style={{ textAlign: 'center', color: 'red' }} />
+        </TouchableOpacity>
       </View>
     </Modal>
   );
