@@ -10,7 +10,16 @@ export default class App extends React.Component {
 
   handlePlaceAdd = (newPlace) => {
     this.setState({
-        places: [...this.state.places, newPlace],
+        places: [...this.state.places, {
+          key: String(Math.random()),
+          name: newPlace,
+        }],
+    });
+  };
+
+  handlePlaceDelete = key => {
+    this.setState({
+      places: this.state.places.filter(item => item.key !== key),
     });
   };
 
@@ -19,7 +28,9 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <NewPlace
           onAddPlace={this.handlePlaceAdd} />
-        <PlaceList places={this.state.places} />
+        <PlaceList
+          onItemDelete={this.handlePlaceDelete}
+          places={this.state.places} />
       </View>
     );
   }

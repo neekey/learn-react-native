@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function ListItem({placeName}) {
+export default function ListItem({ placeName, onItemPress}) {
   return (
-    <View style={styles.listItem}>
-      <Text>{placeName}</Text>
-    </View>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      onPress={onItemPress}>
+      <View style={styles.listItem}>
+        <Text>{placeName}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 ListItem.propTypes = {
   placeName: PropTypes.string,
+  onItemPress: PropTypes.func,
 };
 
 const styles = StyleSheet.create({

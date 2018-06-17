@@ -14,9 +14,9 @@ export default class NewPlace extends React.Component {
   };
 
   handleNewPlaceAdd = () => {
-    this.setState({
-      newPlaceName: '',
-    });
+    // this.setState({
+    //   newPlaceName: '',
+    // });
     this.props.onAddPlace(this.state.newPlaceName);
   };
 

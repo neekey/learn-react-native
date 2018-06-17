@@ -1,20 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../listItem';
-import { View, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
-export default function PlaceList({ places }) {
+export default function PlaceList({ places, onItemDelete }) {
   return (
-    <View style={styles.placeList}>
-      {places.map((place, index) => (
-        <ListItem key={index} placeName={place} />
-      ))}
-    </View>
+    <FlatList
+      data={places}
+      renderItem={data => (
+        <ListItem
+          onItemPress={() => onItemDelete(data.item.key)}
+          placeName={data.item.name} />
+      )}
+      style={styles.placeList} />
   );
 };
 
 PlaceList.propTypes = {
   places: PropTypes.array,
+  onItemDelete: PropTypes.func,
+};
+
+PlaceList.defaultProps = {
+  onItemDelete: () => null,
 };
 
 const styles = StyleSheet.create({
