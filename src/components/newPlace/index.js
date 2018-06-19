@@ -27,7 +27,6 @@ export default class NewPlace extends React.Component {
           onChangeText={this.handlePlaceNameChange}
           style={styles.placeNameInput}
           clearButtonMode="always"
-          autoFocus
           returnKeyLabel="Hit me!"
           placeholder="please input something"
           value={this.state.newPlaceName} />
