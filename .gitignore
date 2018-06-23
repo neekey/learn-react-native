@@ -19,3 +19,4 @@ yarn-error.log*
 .gradle
 android/app/build
 ios/build
+ios/Pods

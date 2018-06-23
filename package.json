@@ -19,9 +19,12 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "antd-mobile-rn": "^2.2.0",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-image-picker": "^0.26.10",
+    "react-native-maps": "^0.21.0",
     "react-native-navigation": "^1.1.471",
     "react-native-vector-icons": "^4.6.0",
     "react-redux": "^5.0.7",

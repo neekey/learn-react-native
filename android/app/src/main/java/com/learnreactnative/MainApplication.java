@@ -1,8 +1,9 @@
 package com.learnreactnative;
-
+import com.airbnb.android.react.maps.MapsPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactPackage;
+import com.imagepicker.ImagePickerPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +20,9 @@ public class MainApplication extends NavigationApplication {
        // Add additional packages you require here
        // No need to add RnnPackage and MainReactPackage
        return Arrays.<ReactPackage>asList(
-          new VectorIconsPackage()
+          new VectorIconsPackage(),
+          new MapsPackage(),
+          new ImagePickerPackage()
        );
    }
 

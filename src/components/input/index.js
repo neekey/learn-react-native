@@ -1,21 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TextInput, StyleSheet } from 'react-native';
+import { InputItem } from 'antd-mobile-rn';
 
-const styles = StyleSheet.create({
-  input: {
-    width: '100%',
-    padding: 5,
-    borderBottomWidth: 1,
-    borderColor: '#ddd',
-  },
-});
-
-export default function Input({ style, ...props }) {
+export default function Input({ onChangeText, ...props }) {
   return (
-    <TextInput
-      style={[styles.input, style]}
-      underlineColorAndroid="transparent"
+    <InputItem
+      onChange={onChangeText}
       {...props} />
   );
 };

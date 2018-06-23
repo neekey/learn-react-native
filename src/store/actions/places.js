@@ -1,12 +1,10 @@
 export const ADD_PLACE = 'ADD_PLACE';
 export const DELETE_PLACE = 'DELETE_PLACE';
 
-export function addPlace(placeName) {
+export function addPlace(place) {
   return {
     type: ADD_PLACE,
-    payload: {
-      placeName,
-    },
+    payload: place,
   };
 }
 

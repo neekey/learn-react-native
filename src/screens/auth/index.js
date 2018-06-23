@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ImageBackground } from 'react-native';
+import { View, StyleSheet, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import Input from '../../components/input';
 import HeadingText from '../../components/headingText';
 import Button from '../../components/button';
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 export default function AuthScreen() {
   return (
     <ImageBackground source={backgroundImage} style={styles.background}>
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
         <HeadingText>Please login in</HeadingText>
         <Button title="Switch to login" />
         <View style={styles.inputContainer}>
@@ -37,7 +37,7 @@ export default function AuthScreen() {
           <Input placeholder="Confirm password" />
         </View>
         <Button title="Login" onPress={startMainScreen} />
-      </View>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 }

@@ -13,12 +13,14 @@ const initialState = {
 export default function placesReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_PLACE:
+      const { name, location, image } = action.payload;
       return {
         ...state,
         places: [...state.places, {
           key: String(Math.random()),
-          name: action.payload.placeName,
-          image: images[Math.random() >= 0.5 ? 0 : 1],
+          name,
+          location,
+          image,
         }],
       };
       break;

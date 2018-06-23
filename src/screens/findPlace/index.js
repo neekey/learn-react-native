@@ -13,6 +13,7 @@ class FindPlaceScreen extends React.Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
   onNavigatorEvent = event => {
+    console.log(event);
     if (event.type === 'NavBarButtonPress' && event.id === 'drawerMenuButton') {
       this.props.navigator.toggleDrawer({
         side: 'left',
